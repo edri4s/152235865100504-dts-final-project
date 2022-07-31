@@ -20,21 +20,21 @@ function Header() {
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/product">
-                                    Product
+                                    Produk
                                 </NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/about">
-                                    About
+                                    Tentang
                                 </NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink className="nav-link" to="/contact">
-                                    Contact
+                                    Kontak
                                 </NavLink>
                             </li>
                         </ul>
-                        <NavLink className="navbar-brand mx-auto fw-bold" to="/home">
+                        <NavLink className="navbar-brand mx-auto fw-bold" to="/">
                             <img src="/assets/images/enggang.png" alt="logo" width={'30px'} />
                             <span style={{ color: "yellow" }}> Borneo</span> <span style={{ color: "#fff" }}>Phone</span>
                         </NavLink>
