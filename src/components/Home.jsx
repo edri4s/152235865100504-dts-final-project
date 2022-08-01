@@ -1,4 +1,5 @@
 import React from 'react'
+import Product from './Product'
 
 const Home = () => {
     return (
@@ -11,13 +12,13 @@ const Home = () => {
                 </div>
                 <div className="carousel-inner">
                     <div className="carousel-item active">
-                        <img src="assets/images/img1.jpg" className="d-block w-100" alt="Phone1" height={'600px'} />
+                        <img src="assets/images/img1.jpg" className="d-block w-100" alt="Apple1" height={'500px'} />
                     </div>
                     <div className="carousel-item">
-                        <img src="assets/images/img2.jpg" className="d-block w-100" alt="Phone2" height={'600px'} />
+                        <img src="assets/images/img2.jpeg" className="d-block w-100" alt="Apple2" height={'500px'} />
                     </div>
                     <div className="carousel-item">
-                        <img src="assets/images/img3.jpg" className="d-block w-100" alt="Phone3" height={'600px'} />
+                        <img src="assets/images/img3.jpg" className="d-block w-100" alt="Apple3" height={'500px'} />
                     </div>
                 </div>
                 <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
@@ -28,7 +29,9 @@ const Home = () => {
                     <span className="carousel-control-next-icon" aria-hidden="true"></span>
                     <span className="visually-hidden">Next</span>
                 </button>
-            </div></>
+            </div>
+            <Product />
+        </>
     )
 }
 

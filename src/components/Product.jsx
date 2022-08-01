@@ -1,24 +1,37 @@
 import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 
+const brandsAPI = "https://api-mobilespecs.azharimm.site/v2/brands";
 const iphoneAPI = 'https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=1';
+const interestPhone = "https://api-mobilespecs.azharimm.site/v2/top-by-interest";
 const options = {
     method: 'GET',
     headers: { Accept: 'application/json' }
 };
 
 const Product = () => {
+    const [brand, setBrand] = useState([]);
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        listProduct(iphoneAPI, options);
+        listProduct(interestPhone, options);
+        listBrand(brandsAPI, options);
     }, [])
+
+    const listBrand = (url, options) => {
+        fetch(url, options)
+            .then((res) => res.json())
+            .then((json) => {
+                //console.log(json.data);
+                setBrand(json.data);
+            });
+    }
 
     const listProduct = (url, options) => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                console.log(json.data.phones);
+                // console.log(json.data.phones);
                 setProduct(json.data.phones);
             });
     }
@@ -36,6 +49,10 @@ const Product = () => {
         )
     }
 
+    const handlerOnClick = (detail) => {
+        listProduct(detail, options);
+    }
+
     return (
         <>
             <div className="container mt-3">
@@ -46,6 +63,21 @@ const Product = () => {
                     </div>
                 </div>
             </div>
+
+            <nav className="navbar navbar-expand-lg justify-content-between">
+                <div className="container">
+                    <ul className="navbar-nav mx-auto">
+                        {brand && brand.filter(value => value.brand_name === 'Apple' || value.brand_name === 'Asus' || value.brand_name === 'Oppo' || value.brand_name === 'Samsung' || value.brand_name === 'vivo' || value.brand_name === 'Xiaomi').map(({ brand_id, brand_name, detail }) => {
+                            return (
+                                <li className="nav-item">
+                                    <button key={brand_id} className="btn btn-outline-dark px-3 ms-1 rounded-pill shadow-sm">{brand_name} </button>
+                                </li>
+                            )
+
+                        })}
+                    </ul>
+                </div>
+            </nav>
 
             <div className="container">
                 <div className="row justify-content-around">

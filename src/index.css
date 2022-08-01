@@ -38,3 +38,12 @@ code {
   transform: scale(1.1);
   box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
 }
+
+.cardAbout{
+  transition: all 0.5s ease;
+}
+
+.cardAbout:hover{
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgb(0, 0, 0, 0.5);
+}

@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import CartBtn from "./buttons/CartBtn";
+// import CartBtn from "./buttons/CartBtn";
 import LoginBtn from "./buttons/LoginBtn";
 
 function Header() {
@@ -8,11 +8,16 @@ function Header() {
         <>
             <nav className="navbar navbar-expand-lg bg-dark">
                 <div className="container-fluid">
+                    <NavLink className="navbar-brand fw-bold" to="/">
+                        <img src="/assets/images/enggang.png" alt="logo" width={'30px'} />
+                        <span style={{ color: "yellow" }}> Techno</span> <span style={{ color: "#fff" }}>Spech</span>
+                    </NavLink>
+
                     <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="asaksnavbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav me-2 mb-2 mb-lg-0">
+                        <ul className="navbar-nav ms-auto me-5 mb-0">
                             <li className="nav-item">
                                 <NavLink className="nav-link" aria-current="page" to="/">
                                     Home
@@ -34,13 +39,10 @@ function Header() {
                                 </NavLink>
                             </li>
                         </ul>
-                        <NavLink className="navbar-brand mx-auto fw-bold" to="/">
-                            <img src="/assets/images/enggang.png" alt="logo" width={'30px'} />
-                            <span style={{ color: "yellow" }}> Borneo</span> <span style={{ color: "#fff" }}>Phone</span>
-                        </NavLink>
+
 
                         <LoginBtn />
-                        <CartBtn />
+                        {/* <CartBtn /> */}
                     </div>
 
 

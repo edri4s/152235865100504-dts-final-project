@@ -1,6 +1,5 @@
 import React from 'react';
 import '../login.css';
-import { NavLink } from 'react-router-dom';
 
 function Footer() {
     return (
@@ -12,15 +11,18 @@ function Footer() {
 
                 {/* Sosial Media */}
                 <div>
-                    <NavLink to="#!" className="text-white me-4">
+                    <a href="https://web.facebook.com/edri4s" className="text-white me-4">
                         <i className="fa fa-facebook-f"></i>
-                    </NavLink>
-                    <NavLink to="#!" className="text-white me-4">
+                    </a>
+                    <a href="https://www.instagram.com/edri4s" className="text-white me-4">
+                        <i className="fa fa-instagram"></i>
+                    </a>
+                    <a href="https://twitter.com/edri_4s" className="text-white me-4">
                         <i className="fa fa-twitter"></i>
-                    </NavLink>
-                    <NavLink to="#!" className="text-white">
+                    </a>
+                    <a href="https://www.linkedin.com/in/edri-adi-setiawan-609626109" className="text-white me-4">
                         <i className="fa fa-linkedin"></i>
-                    </NavLink>
+                    </a>
                 </div>
                 {/* Sosial Media */}
             </div>
