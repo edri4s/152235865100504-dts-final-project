@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 
 const brandsAPI = "https://api-mobilespecs.azharimm.site/v2/brands";
-const iphoneAPI = 'https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=1';
+//const iphoneAPI = 'https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=1';
 const interestPhone = "https://api-mobilespecs.azharimm.site/v2/top-by-interest";
 const options = {
     method: 'GET',
@@ -49,9 +49,9 @@ const Product = () => {
         )
     }
 
-    const handlerOnClick = (detail) => {
-        listProduct(detail, options);
-    }
+    // const handlerOnClick = (detail) => {
+    //     listProduct(detail, options);
+    // }
 
     return (
         <>
