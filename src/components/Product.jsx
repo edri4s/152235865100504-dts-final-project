@@ -23,7 +23,7 @@ const Product = () => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                console.log(json.data);
+                // console.log(json.data);
                 setBrand(json.data);
             });
     }
