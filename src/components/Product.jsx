@@ -2,8 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { NavLink } from 'react-router-dom';
 
 const brandsAPI = "https://api-mobilespecs.azharimm.site/v2/brands";
-//const iphoneAPI = 'https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=1';
-const interestPhone = "https://api-mobilespecs.azharimm.site/v2/top-by-interest";
+const iphoneAPI = 'https://api-mobilespecs.azharimm.site/v2/brands/apple-phones-48?page=1';
+//const interestPhone = "https://api-mobilespecs.azharimm.site/v2/top-by-interest";
 const options = {
     method: 'GET',
     headers: { Accept: 'application/json' }
@@ -14,7 +14,8 @@ const Product = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        listProduct(interestPhone, options);
+        console.log('dawd')
+        listProduct(iphoneAPI, options);
         listBrand(brandsAPI, options);
     }, [])
 
@@ -22,7 +23,7 @@ const Product = () => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                //console.log(json.data);
+                console.log(json.data);
                 setBrand(json.data);
             });
     }
@@ -49,9 +50,11 @@ const Product = () => {
         )
     }
 
-    // const handlerOnClick = (detail) => {
-    //     listProduct(detail, options);
-    // }
+    const handlerOnClick = (detail) => {
+        return () => {
+            listProduct(detail, options);
+        }
+    }
 
     return (
         <>
@@ -69,11 +72,10 @@ const Product = () => {
                     <ul className="navbar-nav mx-auto">
                         {brand && brand.filter(value => value.brand_name === 'Apple' || value.brand_name === 'Asus' || value.brand_name === 'Oppo' || value.brand_name === 'Samsung' || value.brand_name === 'vivo' || value.brand_name === 'Xiaomi').map(({ brand_id, brand_name, detail }) => {
                             return (
-                                <li className="nav-item">
-                                    <button key={brand_id} className="btn btn-outline-dark px-3 ms-1 rounded-pill shadow-sm">{brand_name} </button>
+                                <li className="nav-item" key={brand_id}>
+                                    <button onClick={handlerOnClick(detail)} className="btn btn-outline-dark px-3 ms-1 rounded-pill shadow-sm">{brand_name} </button>
                                 </li>
                             )
-
                         })}
                     </ul>
                 </div>
