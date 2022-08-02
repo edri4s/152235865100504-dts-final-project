@@ -23,7 +23,7 @@ const Product = () => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                // console.log(json.data);
+                console.log(json.data);
                 setBrand(json.data);
             });
     }
@@ -73,7 +73,7 @@ const Product = () => {
                         {brand && brand.filter(value => value.brand_name === 'Apple' || value.brand_name === 'Asus' || value.brand_name === 'Oppo' || value.brand_name === 'Samsung' || value.brand_name === 'vivo' || value.brand_name === 'Xiaomi').map(({ brand_id, brand_name, detail }) => {
                             return (
                                 <li className="nav-item" key={brand_id}>
-                                    <button onClick={handlerOnClick(detail)} className="btn btn-outline-dark px-3 ms-1 rounded-pill shadow-sm">{brand_name} </button>
+                                    <button onClick={handlerOnClick(detail.replace('http://', 'https://'))} className="btn btn-outline-dark px-3 ms-1 rounded-pill shadow-sm">{brand_name} </button>
                                 </li>
                             )
                         })}
