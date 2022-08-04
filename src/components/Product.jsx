@@ -14,7 +14,6 @@ const Product = () => {
     const [product, setProduct] = useState([]);
 
     useEffect(() => {
-        console.log('dawd')
         listProduct(iphoneAPI, options);
         listBrand(brandsAPI, options);
     }, [])
@@ -23,7 +22,7 @@ const Product = () => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                console.log(json.data);
+                // console.log(json.data);
                 setBrand(json.data);
             });
     }
@@ -32,7 +31,7 @@ const Product = () => {
         fetch(url, options)
             .then((res) => res.json())
             .then((json) => {
-                // console.log(json.data.phones);
+                console.log(json.data.phones);
                 setProduct(json.data.phones);
             });
     }
@@ -40,11 +39,11 @@ const Product = () => {
 
     const cardProduct = (item) => {
         return (
-            <div className="card my-3 py-4" key={item.slug} style={{ width: "18rem", borderRadius: "25px" }}>
+            <div className="cardProduk my-3 py-4" key={item.slug} style={{ width: "18rem", borderRadius: "25px" }}>
                 <img src={item.image} className="card-img-top mx-auto" alt={item.phone_name} style={{ width: "80%" }} />
                 <div className="card-body text-center">
                     <h5 className="card-title">{item.phone_name}</h5>
-                    <NavLink to={`/product/${item.slug}`} className="btn btn-outline-primary">Detail</NavLink>
+                    <NavLink to={`/products/${item.slug}`} className="btn btn-outline-primary">Detail</NavLink>
                 </div>
             </div>
         )

@@ -8,6 +8,7 @@ import Contact from './components/Contact';
 import { Routes, Route } from 'react-router-dom';
 import Login from './components/Login';
 import Register from './components/Register';
+import ProductDetail from './components/ProductDetail';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <Header />
       <Routes>
         <Route exact path="/" element={<Home />} />
-        <Route exact path="/product" element={<Product />} />
+        <Route exact path="/products" element={<Product />} />
+        <Route exact path="/products/:id" element={<ProductDetail />} />
         <Route exact path="/about" element={<About />} />
         <Route exact path="/contact" element={<Contact />} />
         <Route exact path="/login" element={<Login />} />
