@@ -23,7 +23,7 @@ const ProductDetail = () => {
             .catch(err => {
                 console.log(err)
             })
-    }, [])
+    }, [detailAPI])
 
     const listSpec = detail.specifications?.map((item) =>
         <p className="card-text">
