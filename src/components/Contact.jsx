@@ -7,7 +7,7 @@ const Contact = () => {
                 <div className='row'>
                     <section className="mb-4">
                         <h2 className="h1-responsive font-weight-bold text-center my-4">Kontak kami</h2>
-                        <p className="text-center w-responsive mx-auto mb-5">Punya pertanyaan seputar spesifikasi produk <b>APPLE</b> ? Silahakan kirimkan pertanyannya di form berikut.</p>
+                        <p className="text-center w-responsive mx-auto mb-5">Punya pertanyaan seputar spesifikasi produk elektronik ? Silahkan kirimkan pertanyannya di form berikut.</p>
 
                         <div className="row">
                             <div className="col-md-8 mb-md-0 mb-5">
